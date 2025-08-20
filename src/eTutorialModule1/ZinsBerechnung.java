@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class ZinsBerechnung {
     public static void main(String[] args) {
-        double kontostand = 2000;
-        double zins = 2;
+        double kontostand;
+        double zins;
         double zinsWert;
-        int jahre = 10;
+        int jahre;
 
         Scanner scanner = new Scanner(System.in);
 
