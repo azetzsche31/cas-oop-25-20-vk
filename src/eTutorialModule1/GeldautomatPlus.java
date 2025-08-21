@@ -2,15 +2,12 @@ package eTutorialModule1;
 
 import java.util.Scanner;
 
-public class Geldautomat {
+public class GeldautomatPlus {
     public static void main(String[] args) {
 
         int betrag;
-        int hundert;
-        int fuenfzig;
-        int zwanzig;
-        int zehn;
-        int rest;
+        final int maxBetrag = 3000;
+        int antwort;
 
 
 
@@ -26,7 +23,37 @@ public class Geldautomat {
             betrag = (int) Math.floor(betrag / 10.0) * 10;
         }
 
-        System.out.println("Wir geben Ihnen den Betrag von " + betrag + " in nachfolgendne Noten aus.");
+        if(betrag > maxBetrag ){
+            System.out.println("Der gewünschte Betrag ist grösser als der maximal Betrag von " + maxBetrag + " Fr.");
+            System.out.println("Möchten Sie den maximal Betrag abheben? Ja = 1, Nein = 2");
+
+            antwort = scanner.nextInt();
+
+            if (antwort == 1) {
+                System.out.println("Sie haben Ja gewählt. Wir zahlen Ihnen den Betrag von " + maxBetrag + " Fr. aus");
+                betrag = maxBetrag;
+                berechnung(betrag);
+            }
+            System.out.println("Sie haben Nein gewählt. Wir brechen die Auszahlung ab.");
+        } else {
+
+            System.out.println("Wir geben Ihnen den Betrag von " + betrag + " in nachfolgendne Noten aus.");
+            berechnung(betrag);
+        }
+
+
+
+
+
+    }
+
+    public static void berechnung(int betrag) {
+
+        int hundert;
+        int rest;
+        int fuenfzig;
+        int zwanzig;
+        int zehn;
 
         hundert = betrag/100;
         rest = betrag%100;
@@ -52,6 +79,5 @@ public class Geldautomat {
         if(rest != 0) {
             System.out.println("Rest: " + rest);
         }
-
     }
 }
