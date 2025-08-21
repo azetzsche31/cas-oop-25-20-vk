@@ -40,11 +40,6 @@ public class GeldautomatPlus {
             System.out.println("Wir geben Ihnen den Betrag von " + betrag + " in nachfolgendne Noten aus.");
             berechnung(betrag);
         }
-
-
-
-
-
     }
 
     private static void berechnung(int betrag) {
