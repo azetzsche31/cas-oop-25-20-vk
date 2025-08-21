@@ -47,7 +47,7 @@ public class GeldautomatPlus {
 
     }
 
-    public static void berechnung(int betrag) {
+    private static void berechnung(int betrag) {
 
         int hundert;
         int rest;
