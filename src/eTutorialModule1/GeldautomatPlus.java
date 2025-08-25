@@ -6,9 +6,8 @@ public class GeldautomatPlus {
     public static void main(String[] args) {
 
         int betrag;
-        final int maxBetrag = 3000;
+        final int MAXBETRAG = 3000;
         int antwort;
-
 
 
         Scanner scanner = new Scanner(System.in);
@@ -19,19 +18,19 @@ public class GeldautomatPlus {
 
         System.out.println("Eingegebener Geldbetrag: " + betrag + " Fr.");
 
-        if(betrag % 10 != 0){
+        if (betrag % 10 != 0) {
             betrag = (int) Math.floor(betrag / 10.0) * 10;
         }
 
-        if(betrag > maxBetrag ){
-            System.out.println("Der gewünschte Betrag ist grösser als der maximal Betrag von " + maxBetrag + " Fr.");
+        if (betrag > MAXBETRAG) {
+            System.out.println("Der gewünschte Betrag ist grösser als der maximal Betrag von " + MAXBETRAG + " Fr.");
             System.out.println("Möchten Sie den maximal Betrag abheben? Ja = 1, Nein = 2");
 
             antwort = scanner.nextInt();
 
             if (antwort == 1) {
-                System.out.println("Sie haben Ja gewählt. Wir zahlen Ihnen den Betrag von " + maxBetrag + " Fr. aus");
-                betrag = maxBetrag;
+                System.out.println("Sie haben Ja gewählt. Wir zahlen Ihnen den Betrag von " + MAXBETRAG + " Fr. aus");
+                betrag = MAXBETRAG;
                 berechnung(betrag);
             }
             System.out.println("Sie haben Nein gewählt. Wir brechen die Auszahlung ab.");
@@ -50,29 +49,31 @@ public class GeldautomatPlus {
         int zwanzig;
         int zehn;
 
-        hundert = betrag/100;
-        rest = betrag%100;
-        fuenfzig = rest/50;
-        rest = rest%50;
-        zwanzig = rest/20;
-        rest = rest%20;
-        zehn = rest/10;
-        rest = rest%10;
+        hundert = betrag / 100;
+        rest = betrag % 100;
+        fuenfzig = rest / 50;
+        rest = rest % 50;
+        zwanzig = rest / 20;
+        rest = rest % 20;
+        zehn = rest / 10;
+        rest = rest % 10;
 
-        if(hundert != 0) {
+        if (hundert != 0) {
             System.out.println("100er " + hundert);
         }
-        if(fuenfzig != 0) {
+        if (fuenfzig != 0) {
             System.out.println("50er: " + fuenfzig);
         }
-        if(zwanzig != 0) {
+        if (zwanzig != 0) {
             System.out.println("20er: " + zwanzig);
         }
-        if(zehn != 0) {
+        if (zehn != 0) {
             System.out.println("10er: " + zehn);
         }
-        if(rest != 0) {
+        if (rest != 0) {
             System.out.println("Rest: " + rest);
         }
+
     }
+
 }
